@@ -1,0 +1,89 @@
+/* @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css"); */
+/* @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css"); */
+/* 16px === 1rem */
+body, ul, h1 { margin: 0; padding: 0;}
+li { list-style-type: none;}
+img { vertical-align: bottom;}
+a { text-decoration: none; color: #000;}
+* { 
+    font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+    font-size: 18px;
+    font-weight: 300;
+    font-style: normal;
+    letter-spacing: -0.02rem;
+    line-height: 2;
+    box-sizing: border-box;
+}
+body { 
+    /* position: relative; */
+    min-width: 1420px;
+    width: 100%;
+    /* overflow-x: auto; */
+}
+/* .wrapper { overflow: hidden;} */
+
+/****************** Header ******************/
+#header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+    /* transition: all .3s ease-in-out; */
+}
+#header .header_content {
+    margin: 15px 40px;
+    overflow: hidden;
+}
+.header_content .logo { 
+    display: block;
+    padding: 10px;
+    float: left;
+}
+
+.header_content .gnb_list {
+    float: left;
+}
+.header_content .gnb_list a {
+    display: block;
+    text-align: center;
+    color: #fff;
+    padding: 5px 30px;
+    
+    
+    /* font-size: 1.4rem;
+    font-weight: 500;
+    letter-spacing: normal;
+    line-height: 5.5rem;
+    padding: 0 2rem;
+    width: auto;
+    min-width: 11rem;
+    transition: min-width .5s ease-in-out;
+    font-family: 'InstrumentSans', sans-serif; */
+}
+.header_content .gnb_list > a {
+    padding: 15px 30px;
+    /* border-bottom: 1px solid gold; */
+}
+.gnb_list .lnb .lnb_over a{
+    font-size: 14px;
+}
+.menu .menu_wrapper{
+    display: block;
+    float: right;
+    height: 62px;
+    line-height: 62px;
+}
+.menu .menu_wrapper li{
+    float: left;
+}
+.menu .menu_wrapper li a{
+    margin-right: 10px;
+}
+
+.container .contents .main .section_banner .banner_wrapper .banner_list {
+    float: left;
+}
+.container .contents .main .section_banner .banner_wrapper {
+    width: 100vw;
+}

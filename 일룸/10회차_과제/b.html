@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #footer .quick_cursor {
+            position: fixed;
+            bottom: 60px;
+            right: 50px;
+            z-index: 99;
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+            /* transition: opacity 0.3s ease-in-out; */
+        }
+        #footer .quick_cursor .btn {
+            margin: 0;
+            padding: 0;
+            background-size: 100%;
+            /* transition: all 0.3s ease-in-out; */
+        }
+        #footer .quick_cursor .btn a {
+            display: block;
+            margin: 0;
+            padding: 0;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            overflow: hidden;
+        }
+        #footer .quick_cursor .btn img {
+            width: 100%;
+            height: 100%;
+        }
+        #footer .quick_cursor .shop {
+            opacity: 1;
+        }
+        #footer .quick_cursor .chat {
+            opacity: 1;
+        }
+        #footer .quick_cursor .top {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <footer id="footer">
+        <div class="quick_cursor">
+            <div class="btn shop">
+                <a href="#"><img src="img/shop.svg" alt="매장"></a>
+            </div>
+            <div class="btn chat">
+                <a href="#"><img src="img/chat.svg" alt="챗봇"></a>
+            </div>
+            <div class="btn top">
+                <a href="#"><img src="img/top.svg" alt="상단으로 이동"></a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
+
+footer가 스크롤업 했을 때 나타나고 스크롤다운 했을 때 없어지는 자바스크립트 코드를 알려줘
