@@ -1037,15 +1037,15 @@
 }
 
 .community .community_wrapper .list01:hover  {
-    background: url(/img/sec01.jpg) center;
+    background: url(../img/sec01.jpg) center;
     background-size: cover;
 }
 .community .community_wrapper .list02:hover {
-    background: url(/img/sec02.jpg); 
+    background: url(../img/sec02.jpg); 
     background-size: cover;
 }
 .community .community_wrapper .list03:hover  {
-    background: url(/img/sec03.jpg);
+    background: url(../img/sec03.jpg);
     background-size: cover;
 }
 .community .community_wrapper .community_list:hover .community_logo {
