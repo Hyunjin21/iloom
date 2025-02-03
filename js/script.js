@@ -2,7 +2,6 @@ var swiper = new Swiper(".swiper-pc", {
     slidesPerView: 1,
     spaceBetween: 30,
     loop: true,
-    // loopAdditionalSlides: 1,
     autoplay: {
         delay: 2500,
         disableOnInteraction: false,
@@ -25,7 +24,6 @@ var swiper = new Swiper(".swiper-mob", {
     slidesPerView: 1,
     spaceBetween: 30,
     loop: true,
-    // loopAdditionalSlides: 1,
     autoplay: {
         delay: 2500,
         disableOnInteraction: false,
@@ -43,9 +41,7 @@ var swiper = new Swiper(".swiper-mob", {
             console.log(this.realIndex);
             document.querySelector('.swiper-pagination-current-mob').textContent = this.realIndex + 1;
         },
-        // resize: function () {
-        //     this.update();  // 모바일 크기 변경 시 Swiper 업데이트
-        // }
+        
     }
 });
 
@@ -85,19 +81,10 @@ var swiper = new Swiper(".swiper-item", {
         type: "progressbar",
     },
 });
-// var swiper = new Swiper(".swiper-item-mob", {
-//     //slidesPerView: 2,
-//     //spaceBetween: 15,
-//     //centeredSlides: true,
-//     pagination: {
-//         el: ".pagination04",
-//         type: "progressbar",
-//     },
-    
-// });
+
 var swiper = new Swiper(".swiper-item-mob", {
-    slidesPerView: 'auto',  // 각 li 요소 크기만큼 슬라이드
-    spaceBetween: 0,       // li 요소 간의 간격
+    slidesPerView: 'auto',  
+    spaceBetween: 0,       
     scrollbar: {
         el: '.swiper-scrollbar',
         hide: false,
@@ -105,9 +92,9 @@ var swiper = new Swiper(".swiper-item-mob", {
     },
     pagination: {
         el: ".pagination05",
-        type: "progressbar", // 진행바 설정
+        type: "progressbar", 
     },
-    centeredSlides: false,  // 중앙 정렬을 하지 않음
+    centeredSlides: false,  
 });
 
 
@@ -127,8 +114,33 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         });
     });
+    
+    
 });
   
+document.addEventListener("DOMContentLoaded", () => {
+    const sections = document.querySelectorAll(".section"); 
+
+    function checkScroll() {
+        sections.forEach(section => {
+            const subTitle = section.querySelector(".sub_title"); 
+            if (!subTitle) return; 
+            
+            const sectionTop = section.getBoundingClientRect().top; 
+            const windowHeight = window.innerHeight; 
+
+            if (sectionTop < windowHeight * 0.9) { 
+                subTitle.classList.add("ani_title");
+            } else {
+                subTitle.classList.remove("ani_title");
+            }
+        });
+    }
+
+    window.addEventListener("scroll", checkScroll);
+    checkScroll(); 
+});
+
 
 document.querySelector('.gnb_mob').addEventListener('click', function() {
     document.querySelector('.gnb').style.transform = 'translateX(0)';
@@ -140,6 +152,7 @@ document.querySelector('.gnb_close').addEventListener('click', function() {
 
 const videoContainer = document.querySelector('.video_container');
 const videoWrapper = document.querySelector('.video_wrapper');
+
 let lastScrollTop = 0;
 
 window.addEventListener('scroll', () => {
@@ -170,54 +183,6 @@ window.addEventListener('scroll', () => {
     }
     lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // For Mobile or negative scrolling
 });
-
-/*
-var swiper = null; // Swiper 인스턴스 변수
-var activeIndex = 0; // 현재 슬라이드 인덱스 저장
-
-// Swiper 초기화 함수
-function initializeSwiper() {
-    swiper = new Swiper('.swiper-collection', {
-        slidesPerView: 1,
-        spaceBetween: 10,
-        pagination: {
-            el: '.pagination03',
-            type: 'progressbar',
-        },
-        initialSlide: activeIndex, // 초기 슬라이드 설정
-    });
-
-    // 슬라이드 변경 시 현재 인덱스 저장
-    swiper.on('slideChange', function () {
-        activeIndex = swiper.activeIndex;
-    });
-}
-
-// Swiper 제거 함수
-function destroySwiper() {
-    if (swiper) {
-        activeIndex = swiper.activeIndex; // 제거 전 현재 인덱스 저장
-        swiper.destroy(true, true); // Swiper 인스턴스 제거
-        swiper = null;
-    }
-}
-
-// 화면 크기에 따른 Swiper 초기화 여부 결정
-function checkScreenSize() {
-    var windowWidth = window.innerWidth;
-    if (windowWidth <= 768) { // 모바일 사이즈 (768px 이하)일 때 Swiper 작동
-        if (!swiper) {
-            initializeSwiper();
-        }
-    } else { // PC 사이즈에서는 Swiper 제거
-        destroySwiper();
-    }
-}
-
-// 페이지 로드 시 및 화면 크기 변경 시 Swiper 적용 여부 확인
-document.addEventListener('DOMContentLoaded', checkScreenSize);
-window.addEventListener('resize', checkScreenSize);
-*/
 
 
 
@@ -277,87 +242,6 @@ shopList.addEventListener("mouseleave", () => {
 });
 
 
-
-// let lastScrollY = window.scrollY;
-
-// window.addEventListener('scroll', function() {
-//     const wrap = document.querySelector('#wrapper');
-//     if (wrap.classList.contains('menu_white')) {
-//         wrap.classList.remove('menu_white');
-//     }
-
-
-//     const quickCursor = document.querySelector('#footer .quick_cursor');
-//     const footer = document.querySelector('#footer');
-//     const shopBtn = document.querySelector('.btn.shop img');
-//     const chatBtn = document.querySelector('.btn.chat img');
-//     const topBtn = document.querySelector('.btn.top img');
-
-//     // footer의 상단 위치와 브라우저의 높이 계산
-//     const footerOffsetTop = footer.offsetTop;
-//     const windowHeight = window.innerHeight;
-//     const scrollPosition = window.scrollY + windowHeight;
-
-//     if (window.scrollY > lastScrollY) {
-//         // 스크롤 다운
-//         quickCursor.style.opacity = '0';
-//     } else {
-//         // 스크롤 업
-//         quickCursor.style.opacity = '1';
-//     }
-
-//     if (window.scrollY === 0) {
-//         shopBtn.src = 'img/shop_inverted.svg';
-//         chatBtn.src = 'img/chat_inverted.svg';
-//         topBtn.src = 'img/top_inverted.svg';
-
-//         wrap.classList.add('menu_white');
-        
-//     } else {
-//         shopBtn.src = 'img/shop.svg';
-//         chatBtn.src = 'img/chat.svg';
-//         topBtn.src = 'img/top.svg';
-
-//         wrap.classList.remove('menu_white');
-//     }
-    
-
-//     // Footer 위에 있을 때
-//     if (scrollPosition >= footerOffsetTop) {
-//         quickCursor.style.bottom = `${scrollPosition - footerOffsetTop + 60}px`;
-//     } else {
-//         quickCursor.style.bottom = '60px';
-//     }
-
-//     lastScrollY = window.scrollY;
-//     // lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; 
-// });
-
-
-// // 페이지 맨 위로 이동
-// document.querySelector('.btn.top a').addEventListener('click', function(e) {
-//     e.preventDefault();
-//     console.log('top');
-//     window.scrollTo({
-//         top: 0,
-//         behavior: 'smooth'
-//     });
-// });
-
-
-// document.addEventListener('DOMContentLoaded', function () {
-//     // pc와 mob 모두에 대해 각각 이벤트 리스너 추가
-//     document.querySelectorAll('.quick_cursor.pc .btn.top a, .quick_cursor.mob .btn.top a').forEach((topButton) => {
-//         topButton.addEventListener('click', function(e) {
-//             e.preventDefault();
-//             console.log('Top 버튼 클릭 (PC 또는 MOB)');
-//             window.scrollTo({
-//                 top: 0,
-//                 behavior: 'smooth'
-//             });
-//         });
-//     });
-// });
 
 let lastScrollY = window.scrollY;
 
