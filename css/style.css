@@ -1417,7 +1417,7 @@
         transform: translateY(-50%) scale(0.5);
         width: 27px;
         height: 16px;
-        background: url(/img/down_arrow.svg) no-repeat center;
+        background: url(../img/down_arrow.svg) no-repeat center;
         transition: all .3s ease-in-out;
     }
     
@@ -2352,7 +2352,7 @@
         transform: translateY(-50%) scale(0.7);
         width: 27px;
         height: 16px;
-        background: url(/img/down_arrow.svg) no-repeat center;
+        background: url(../img/down_arrow.svg) no-repeat center;
         transition: all .3s ease-in-out;
     }
     
@@ -2991,13 +2991,13 @@
     }
 
     .community .community_wrapper .list01:hover {
-        background: url(/img/sec01.jpg) center;
+        background: url(../img/sec01.jpg) center;
     }
     .community .community_wrapper .list02:hover {
-        background: url(/img/sec02.jpg); 
+        background: url(../img/sec02.jpg); 
     }
     .community .community_wrapper .list03:hover {
-        background: url(/img/sec03.jpg);
+        background: url(../img/sec03.jpg);
     }
     .community .community_wrapper .community_list:hover .community_logo {
         opacity: 0;
